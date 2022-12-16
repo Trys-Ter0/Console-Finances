@@ -91,3 +91,20 @@ var finances = [
 //Calculate and log total number of months
 console.log("Total months: " + finances.length)
 
+// Total Months:
+// Total: $
+// Average  Change: $
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits:  Mth-year ($-------)
+
+// for (let i = 0; i < finances.length; i++) {
+//     change.push(finances[i][1] - finances[i][1]);
+//  } return console.log()
+// ---------------Thanks to fran and Hunter
+
+//  let totalLength = 0;
+let totalProfits = 0;
+let totalChange = 0;
+let averageChange = 0;
+let largestProfit = 
+let largestLoss = 
