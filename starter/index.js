@@ -88,4 +88,6 @@ var finances = [
 ];
 
 
+//Calculate and log total number of months
+console.log("Total months: " + finances.length)
 
