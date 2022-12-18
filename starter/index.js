@@ -106,5 +106,45 @@ console.log("Total months: " + finances.length)
 let totalProfits = 0;
 let totalChange = 0;
 let averageChange = 0;
-let largestProfit = 
-let largestLoss = 
+// let largestProfit = 
+// let largestLoss = 
+
+
+// for (let i = 0; i < finances.length; i++) {
+//     finances[i].forEach(element=>(
+//         // console.log(finances);
+//         totalProfits += (finances [i] [1])
+//         )
+//     )
+//     console.log(totalProfits)
+// } 
+
+
+// const totalProfits= finances.reduce((currentTotal, [1]))=> {
+//     return finances[1] + currentTotal
+// }
+
+// for (let i = 0; i < finances.length; i++){
+//     for(let j = 0; j < finances[i].length; j++){
+//         console.log(finances[i][j])
+//     }
+    
+// }
+
+// var col2 = finances.map(function(value,index) {return value})
+
+// for (let i = 0; i < finances.length - 1; i++) {
+//     change.push(finances[i++] [1] - finances[i][1]);
+// }
+
+const finances1 = finances.map((finance) => {
+    return finance[1]
+})
+
+console.log(finances1)
+
+for (i=0; i < finances1.length; i++) {
+    totalProfits += finances1[i]
+}
+
+console.log(totalProfits)
