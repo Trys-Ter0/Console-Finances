@@ -2,7 +2,9 @@
 
 ## Project Description
  
-I was tasked with writing a program that carries out an analysis of a financial dataset. The task was to calculate:* The total number of months included in the dataset.
+I was tasked with writing a program that carries out an analysis of a financial dataset. The task was to calculate:
+
+* The total number of months included in the dataset.
 
 * The net total amount of Profit/Losses over the entire period.
 
