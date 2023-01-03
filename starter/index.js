@@ -141,10 +141,12 @@ function calculateAverageChange(finances) {
   }
 
   // Calculate the average change by dividing the total change by the number of changes
-  let averageChange = totalChange / numChanges;
+  var averageChange = totalChange / numChanges;
+  
+
 
   // Return the average change
-  console.log(averageChange);
+  console.log("$" + averageChange.toFixed(2));
 }
 
 
@@ -160,6 +162,8 @@ function averageMonthlyChange(finances) {
 }
 
 console.log("Average Change: " + averageMonthlyChange(finances));
+
+
 
 
 function greatestProfitChange(finances) {
