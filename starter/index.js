@@ -102,12 +102,12 @@ console.log("Total months: " + finances.length)
 //  } return console.log()
 // ---------------Thanks to fran and Hunter
 
-//  let totalLength = 0;
+let totalMonths = 0;
 let totalProfits = 0;
 let totalChange = 0;
 let averageChange = 0;
-// let largestProfit = 
-// let largestLoss = 
+// let greatestProfit = (date: "", amount: 0;)
+// let greatestLoss = (date: "", amount: 0;)
 
 
 // for (let i = 0; i < finances.length; i++) {
@@ -147,4 +147,159 @@ for (i=0; i < finances1.length; i++) {
     totalProfits += finances1[i]
 }
 
-console.log(totalProfits)
+//Final Console Output
+
+console.log("Financial Analysis")
+console.log("-------------------------")
+console.log("Total months: " + finances.length)
+console.log("Total Profits: $" + totalProfits)
+// console.log("Average Change: $" + "")
+// console.log("Greatest Increase in Profits: " +)
+// console.log("Greatest Decrease in Profits: $" +)
+
+
+// const result = finances.map((e, ...rest], i) => (
+//     [i ? e - finances[i - 1][1] ; e, ...rest]
+// ))
+
+// console.log(result)
+
+// let prev;
+// const res = finances.map(E => {
+//     const val =e[0] - (prev || 0);
+//     prev = e[0];
+//     e[0] = val;
+//     return E;
+// });
+
+// console.log(res);
+
+
+// https://stackoverflow.com/questions/70326957/the-latter-element-subtract-the-previous-element-in-javascript
+var result = finances1;
+for(var i = finances1.length -1; i > 0; i--) {
+    result[i] = finances1[i] - finances1[i -1]; 
+}
+
+// console.log(result)
+
+for (i=0; i < result.length; i++) {
+    totalChange += result[i]
+}
+console.log(totalChange)
+
+// for (averageChange = totalChange / totalMonths) {
+//     console.log(averageChange)
+// }
+
+// averageChange = totalChange / finances.length;
+
+// console.log("average change =" + averageChange);
+
+// function averageChange(finances) {
+//     for (let i = 1; - < finances.length; i++) {
+//         let change = records[i].ProfitLoss - finances[i - 1].ProfitLoss;
+//         totalChange += change;
+//         numChanges++;
+//     }
+
+//     let averageChange = totalChange / numChanges;
+//     return averageChange;
+// }
+
+function calculateAverageChange(finances) {
+    // Initialize variables to track the total change and number of changes
+    let totalChange = 0;
+    let numChanges = 0;
+  
+    // Iterate through the records, starting from the second record
+    for (let i = 1; i < finances.length; i++) {
+      // Calculate the change in Profit/Losses between the current record and the previous record
+      let change = finances[i].ProfitLoss - finances[i - 1].ProfitLoss;
+      // Add the change to the total change
+      totalChange += change;
+      // Increment the number of changes
+      numChanges++;
+    }
+  
+    // Calculate the average change by dividing the total change by the number of changes
+    let averageChange = totalChange / numChanges;
+  
+    // Return the average change
+    console.log(averageChange);
+  }
+
+// Financial Analysis
+// ----------------------------
+// Total Months: 86
+// Total: $38382578
+// Average  Change: $-2315.12
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits: Sep-2013 ($-2196167)
+  
+// function averageMonthlyChange(finances) {
+//     let sum = 0;
+//     for (let i = 1; i < finances.length; i++) {
+//       sum += finances[i] - finances[i - 1];
+//     }
+//     return sum / (finances.length - 1);
+//   }
+  
+//   console.log(averageMonthlyChange(finances)); // Output: 5
+  
+
+
+function averageMonthlyChange(finances) {
+  let sum = 0;
+  for (let i = 1; i < finances.length; i++) {
+    if (Number.isNaN(finances[i][1]) || Number.isNaN(finances[i - 1][1])) {
+      return NaN; // return NaN if either value is not a number
+    }
+    sum += finances[i][1] - finances[i - 1][1];
+  }
+  return sum / (finances.length - 1);
+}
+
+console.log("Average Change: " + averageMonthlyChange(finances));
+
+
+function greatestProfitChange(finances) {
+    let maxProfit = -Infinity;
+    let maxProfitMonth = null;
+    let maxProfitYear = null;
+    let minProfit = Infinity;
+    let minProfitMonth = null;
+    let minProfitYear = null;
+  
+    for (let i = 1; i < finances.length; i++) {
+      let profitChange = finances[i][1] - finances[i - 1][1];
+  
+      if (profitChange > maxProfit) {
+        maxProfit = profitChange;
+        maxProfitMonth = finances[i][0].split('-')[0];
+        maxProfitYear = finances[i][0].split('-')[1];
+      }
+  
+      if (profitChange < minProfit) {
+        minProfit = profitChange;
+        minProfitMonth = finances[i][0].split('-')[0];
+        minProfitYear = finances[i][0].split('-')[1];
+      }
+    }
+  
+    return {
+      maxProfit: maxProfit,
+      maxProfitMonth: maxProfitMonth,
+      maxProfitYear: maxProfitYear,
+      minProfit: minProfit,
+      minProfitMonth: minProfitMonth,
+      minProfitYear: minProfitYear,
+    };
+  }
+  
+  console.log("Greatest Increase in Profits: " + greatestProfitChange(finances));
+
+  
+  
+
+  
